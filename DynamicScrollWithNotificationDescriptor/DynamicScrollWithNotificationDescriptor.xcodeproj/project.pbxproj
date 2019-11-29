@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		C234D3562390E90C00A4741B /* KeyboardPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = C234D3552390E90C00A4741B /* KeyboardPayload.swift */; };
 		C234D3582390EC0F00A4741B /* NotificationDescripter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C234D3572390EC0F00A4741B /* NotificationDescripter.swift */; };
+		C234D35C2391124D00A4741B /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C234D35B2391124D00A4741B /* RootViewController.swift */; };
 		C23F19972381731A0022C2D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23F19962381731A0022C2D6 /* AppDelegate.swift */; };
 		C23F19992381731A0022C2D6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23F19982381731A0022C2D6 /* SceneDelegate.swift */; };
-		C23F199B2381731A0022C2D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23F199A2381731A0022C2D6 /* ViewController.swift */; };
-		C23F199E2381731A0022C2D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C23F199C2381731A0022C2D6 /* Main.storyboard */; };
+		C23F199B2381731A0022C2D6 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23F199A2381731A0022C2D6 /* TextViewController.swift */; };
 		C23F19A02381731B0022C2D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C23F199F2381731B0022C2D6 /* Assets.xcassets */; };
 		C23F19A32381731B0022C2D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C23F19A12381731B0022C2D6 /* LaunchScreen.storyboard */; };
 		C23F19AC2381867A0022C2D6 /* UIColor+FlatColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23F19AB2381867A0022C2D6 /* UIColor+FlatColors.swift */; };
@@ -23,11 +23,11 @@
 /* Begin PBXFileReference section */
 		C234D3552390E90C00A4741B /* KeyboardPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardPayload.swift; sourceTree = "<group>"; };
 		C234D3572390EC0F00A4741B /* NotificationDescripter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDescripter.swift; sourceTree = "<group>"; };
+		C234D35B2391124D00A4741B /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		C23F19932381731A0022C2D6 /* DynamicScrollWithNotificationDescriptor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DynamicScrollWithNotificationDescriptor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C23F19962381731A0022C2D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C23F19982381731A0022C2D6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C23F199A2381731A0022C2D6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C23F199D2381731A0022C2D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C23F199A2381731A0022C2D6 /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
 		C23F199F2381731B0022C2D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C23F19A22381731B0022C2D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C23F19A42381731B0022C2D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -68,9 +68,9 @@
 			children = (
 				C23F19AA238186650022C2D6 /* Util */,
 				C23F19962381731A0022C2D6 /* AppDelegate.swift */,
+				C234D35B2391124D00A4741B /* RootViewController.swift */,
+				C23F199A2381731A0022C2D6 /* TextViewController.swift */,
 				C23F19982381731A0022C2D6 /* SceneDelegate.swift */,
-				C23F199A2381731A0022C2D6 /* ViewController.swift */,
-				C23F199C2381731A0022C2D6 /* Main.storyboard */,
 				C23F199F2381731B0022C2D6 /* Assets.xcassets */,
 				C23F19A12381731B0022C2D6 /* LaunchScreen.storyboard */,
 				C23F19A42381731B0022C2D6 /* Info.plist */,
@@ -150,7 +150,6 @@
 			files = (
 				C23F19A32381731B0022C2D6 /* LaunchScreen.storyboard in Resources */,
 				C23F19A02381731B0022C2D6 /* Assets.xcassets in Resources */,
-				C23F199E2381731A0022C2D6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,8 +160,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C23F199B2381731A0022C2D6 /* ViewController.swift in Sources */,
+				C23F199B2381731A0022C2D6 /* TextViewController.swift in Sources */,
 				C234D3562390E90C00A4741B /* KeyboardPayload.swift in Sources */,
+				C234D35C2391124D00A4741B /* RootViewController.swift in Sources */,
 				C23F19AC2381867A0022C2D6 /* UIColor+FlatColors.swift in Sources */,
 				C234D3582390EC0F00A4741B /* NotificationDescripter.swift in Sources */,
 				C23F19972381731A0022C2D6 /* AppDelegate.swift in Sources */,
@@ -175,14 +175,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		C23F199C2381731A0022C2D6 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C23F199D2381731A0022C2D6 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C23F19A12381731B0022C2D6 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

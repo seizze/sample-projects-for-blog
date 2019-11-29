@@ -24,6 +24,7 @@ final class NotificationToken {
     
     deinit {
         center.removeObserver(token)
+        print("Observer Removed")
     }
 }
 

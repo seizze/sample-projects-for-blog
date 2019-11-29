@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  TextViewController.swift
 //  DynamicScroll
 //
 //  Created by Chaewan Park on 2019/11/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class TextViewController: UIViewController {
     
     private let scrollView: UIScrollView = {
         let view = UIScrollView()
@@ -39,6 +39,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.backgroundColor = .white
         
         let safeArea = view.safeAreaLayoutGuide
         
@@ -93,31 +95,39 @@ class ViewController: UIViewController {
     private func registerKeyboardNotifications() {
         let center = NotificationCenter.default
         
-        let showToken = center.addObserver(with: UIViewController.keyboardWillShow) { (payload) in
+        let showToken = center.addObserver(with: UIViewController.keyboardWillShow) { [weak self] (payload) in
+            guard let strongSelf = self else { return }
+            
             let contentInset = UIEdgeInsets(
                 top: 0.0,
                 left: 0.0,
                 bottom: payload.endFrame.height,
                 right: 0.0)
-            self.scrollView.contentInset = contentInset
-            self.scrollView.scrollIndicatorInsets = contentInset
+            strongSelf.scrollView.contentInset = contentInset
+            strongSelf.scrollView.scrollIndicatorInsets = contentInset
             
             let firstResponder = UIResponder.currentFirstResponder
             
             if let textView = firstResponder as? UITextView {
-                self.scrollView.scrollRectToVisible(textView.frame, animated: true)
+                strongSelf.scrollView.scrollRectToVisible(textView.frame, animated: true)
             }
         }
         
         notificationTokens.append(showToken)
         
-        let hideToken = center.addObserver(with: UIViewController.keyboardWillHide) { _ in
+        let hideToken = center.addObserver(with: UIViewController.keyboardWillHide) { [weak self] _ in
+            guard let strongSelf = self else { return }
+            
             let contentInset = UIEdgeInsets.zero
-            self.scrollView.contentInset = contentInset
-            self.scrollView.scrollIndicatorInsets = contentInset
+            strongSelf.scrollView.contentInset = contentInset
+            strongSelf.scrollView.scrollIndicatorInsets = contentInset
         }
         
         notificationTokens.append(hideToken)
+    }
+    
+    deinit {
+        print("TextViewController Deinitialized")
     }
 }
 
