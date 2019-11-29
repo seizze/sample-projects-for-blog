@@ -108,7 +108,13 @@ class ViewController: UIViewController {
                 return
         }
         
-        scrollView.contentInset.bottom = keyboardFrame.size.height
+        let contentInset = UIEdgeInsets(
+            top: 0.0,
+            left: 0.0,
+            bottom: keyboardFrame.size.height,
+            right: 0.0)
+        scrollView.contentInset = contentInset
+        scrollView.scrollIndicatorInsets = contentInset
         
         let firstResponder = UIResponder.currentFirstResponder
         
@@ -118,7 +124,9 @@ class ViewController: UIViewController {
     }
     
     @objc private func keyboardWillHide() {
-        scrollView.contentInset.bottom = 0
+        let contentInset = UIEdgeInsets.zero
+        scrollView.contentInset = contentInset
+        scrollView.scrollIndicatorInsets = contentInset
     }
 }
 
