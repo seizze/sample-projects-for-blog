@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C234D3562390E90C00A4741B /* KeyboardPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = C234D3552390E90C00A4741B /* KeyboardPayload.swift */; };
+		C234D3582390EC0F00A4741B /* NotificationDescripter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C234D3572390EC0F00A4741B /* NotificationDescripter.swift */; };
 		C23F19972381731A0022C2D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23F19962381731A0022C2D6 /* AppDelegate.swift */; };
 		C23F19992381731A0022C2D6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23F19982381731A0022C2D6 /* SceneDelegate.swift */; };
 		C23F199B2381731A0022C2D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23F199A2381731A0022C2D6 /* ViewController.swift */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C234D3552390E90C00A4741B /* KeyboardPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardPayload.swift; sourceTree = "<group>"; };
+		C234D3572390EC0F00A4741B /* NotificationDescripter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDescripter.swift; sourceTree = "<group>"; };
 		C23F19932381731A0022C2D6 /* DynamicScrollWithNotificationDescriptor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DynamicScrollWithNotificationDescriptor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C23F19962381731A0022C2D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C23F19982381731A0022C2D6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +84,8 @@
 				C23F19AB2381867A0022C2D6 /* UIColor+FlatColors.swift */,
 				C23F19AD2381871A0022C2D6 /* UIColor+Hex.swift */,
 				C23F19AF2383B4DD0022C2D6 /* UIResponder.swift */,
+				C234D3552390E90C00A4741B /* KeyboardPayload.swift */,
+				C234D3572390EC0F00A4741B /* NotificationDescripter.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -156,7 +162,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C23F199B2381731A0022C2D6 /* ViewController.swift in Sources */,
+				C234D3562390E90C00A4741B /* KeyboardPayload.swift in Sources */,
 				C23F19AC2381867A0022C2D6 /* UIColor+FlatColors.swift in Sources */,
+				C234D3582390EC0F00A4741B /* NotificationDescripter.swift in Sources */,
 				C23F19972381731A0022C2D6 /* AppDelegate.swift in Sources */,
 				C23F19992381731A0022C2D6 /* SceneDelegate.swift in Sources */,
 				C23F19B02383B4DD0022C2D6 /* UIResponder.swift in Sources */,

@@ -35,6 +35,8 @@ class ViewController: UIViewController {
         return view
     }()
     
+    private var notificationTokens = [NotificationToken]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -85,40 +87,37 @@ class ViewController: UIViewController {
         textView1.heightAnchor.constraint(equalTo: textView2.heightAnchor).isActive = true
         textView2.heightAnchor.constraint(equalTo: textView3.heightAnchor).isActive = true
         
-        addKeyboardObserver()
+        registerKeyboardNotifications()
     }
     
-    private func addKeyboardObserver() {
-        // Register Keyboard notifications
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(keyboardWillShow),
-            name: UIResponder.keyboardWillShowNotification,
-            object: nil)
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(keyboardWillHide),
-            name: UIResponder.keyboardWillHideNotification,
-            object: nil)
-    }
-    
-    @objc private func keyboardWillShow(_ notification: Notification) {
-        guard let userInfo = notification.userInfo,
-            let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect else {
-                return
+    private func registerKeyboardNotifications() {
+        let center = NotificationCenter.default
+        
+        let showToken = center.addObserver(with: UIViewController.keyboardWillShow) { (payload) in
+            let contentInset = UIEdgeInsets(
+                top: 0.0,
+                left: 0.0,
+                bottom: payload.endFrame.height,
+                right: 0.0)
+            self.scrollView.contentInset = contentInset
+            self.scrollView.scrollIndicatorInsets = contentInset
+            
+            let firstResponder = UIResponder.currentFirstResponder
+            
+            if let textView = firstResponder as? UITextView {
+                self.scrollView.scrollRectToVisible(textView.frame, animated: true)
+            }
         }
         
-        scrollView.contentInset.bottom = keyboardFrame.size.height
+        notificationTokens.append(showToken)
         
-        let firstResponder = UIResponder.currentFirstResponder
-        
-        if let textView = firstResponder as? UITextView {
-            scrollView.scrollRectToVisible(textView.frame, animated: true)
+        let hideToken = center.addObserver(with: UIViewController.keyboardWillHide) { _ in
+            let contentInset = UIEdgeInsets.zero
+            self.scrollView.contentInset = contentInset
+            self.scrollView.scrollIndicatorInsets = contentInset
         }
-    }
-    
-    @objc private func keyboardWillHide() {
-        scrollView.contentInset.bottom = 0
+        
+        notificationTokens.append(hideToken)
     }
 }
 
