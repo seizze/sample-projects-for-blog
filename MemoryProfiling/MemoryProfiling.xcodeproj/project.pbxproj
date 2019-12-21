@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		C230E28B23AD3C6400CD4DCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C230E28A23AD3C6400CD4DCA /* AppDelegate.swift */; };
 		C230E28D23AD3C6400CD4DCA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C230E28C23AD3C6400CD4DCA /* SceneDelegate.swift */; };
-		C230E28F23AD3C6400CD4DCA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C230E28E23AD3C6400CD4DCA /* ViewController.swift */; };
+		C230E28F23AD3C6400CD4DCA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C230E28E23AD3C6400CD4DCA /* MainViewController.swift */; };
 		C230E29223AD3C6400CD4DCA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C230E29023AD3C6400CD4DCA /* Main.storyboard */; };
 		C230E29423AD3C6600CD4DCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C230E29323AD3C6600CD4DCA /* Assets.xcassets */; };
 		C230E29723AD3C6600CD4DCA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C230E29523AD3C6600CD4DCA /* LaunchScreen.storyboard */; };
+		C230E29F23AD40A400CD4DCA /* LeakyModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C230E29E23AD40A400CD4DCA /* LeakyModalViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C230E28723AD3C6400CD4DCA /* MemoryProfiling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoryProfiling.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C230E28A23AD3C6400CD4DCA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C230E28C23AD3C6400CD4DCA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C230E28E23AD3C6400CD4DCA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C230E28E23AD3C6400CD4DCA /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		C230E29123AD3C6400CD4DCA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C230E29323AD3C6600CD4DCA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C230E29623AD3C6600CD4DCA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C230E29823AD3C6600CD4DCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C230E29E23AD40A400CD4DCA /* LeakyModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeakyModalViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +60,8 @@
 			children = (
 				C230E28A23AD3C6400CD4DCA /* AppDelegate.swift */,
 				C230E28C23AD3C6400CD4DCA /* SceneDelegate.swift */,
-				C230E28E23AD3C6400CD4DCA /* ViewController.swift */,
+				C230E28E23AD3C6400CD4DCA /* MainViewController.swift */,
+				C230E29E23AD40A400CD4DCA /* LeakyModalViewController.swift */,
 				C230E29023AD3C6400CD4DCA /* Main.storyboard */,
 				C230E29323AD3C6600CD4DCA /* Assets.xcassets */,
 				C230E29523AD3C6600CD4DCA /* LaunchScreen.storyboard */,
@@ -138,9 +141,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C230E28F23AD3C6400CD4DCA /* ViewController.swift in Sources */,
+				C230E28F23AD3C6400CD4DCA /* MainViewController.swift in Sources */,
 				C230E28B23AD3C6400CD4DCA /* AppDelegate.swift in Sources */,
 				C230E28D23AD3C6400CD4DCA /* SceneDelegate.swift in Sources */,
+				C230E29F23AD40A400CD4DCA /* LeakyModalViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

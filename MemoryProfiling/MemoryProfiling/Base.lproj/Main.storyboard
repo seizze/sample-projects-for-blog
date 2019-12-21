@@ -1,24 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="MemoryProfiling" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9cZ-RG-mPq">
+                                <rect key="frame" x="135.5" y="433" width="143" height="30"/>
+                                <state key="normal" title="Present Leaky Modal"/>
+                                <connections>
+                                    <segue destination="MLv-S6-Zii" kind="presentation" id="a8s-X2-rD3"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="9cZ-RG-mPq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TiF-ci-L0b"/>
+                            <constraint firstItem="9cZ-RG-mPq" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="lTd-zR-z9D"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="132" y="133"/>
+        </scene>
+        <!--Leaky Modal View Controller-->
+        <scene sceneID="Ax9-YM-zJU">
+            <objects>
+                <viewController storyboardIdentifier="LeakyModalViewController" id="MLv-S6-Zii" customClass="LeakyModalViewController" customModule="MemoryProfiling" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Skp-C2-DgQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bFV-8D-rTm">
+                                <rect key="frame" x="157" y="375.5" width="100" height="91"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="bFV-8D-rTm" secondAttribute="height" multiplier="11:10" id="14T-gK-zVH"/>
+                                    <constraint firstAttribute="width" constant="100" id="gb2-Cb-u3Q"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="clear.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="80" scale="large" weight="regular"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismissModal:" destination="MLv-S6-Zii" eventType="touchUpInside" id="IUO-kG-jBx"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.79921322721229426" green="0.83315082024507836" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="bFV-8D-rTm" firstAttribute="centerX" secondItem="Skp-C2-DgQ" secondAttribute="centerX" id="TPi-QZ-iNs"/>
+                            <constraint firstItem="bFV-8D-rTm" firstAttribute="centerY" secondItem="Skp-C2-DgQ" secondAttribute="centerY" id="vJG-Bs-7xJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gIh-dS-Jyp"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vK5-G4-euZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="886" y="133"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="clear.fill" catalog="system" width="64" height="56"/>
+    </resources>
 </document>
